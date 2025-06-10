@@ -1,4 +1,4 @@
-# SocketAPI Chrome Extension
+# WebSocket Video Downloader
 
 ## Overview
 

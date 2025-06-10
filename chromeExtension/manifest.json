@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "TheMovieDB Downloader",
+    "version": "1.0",
+    "description": "A chrome extension that allows you to download videos from TheMovieDB using M3U8 streams.",
+    "permissions": [
+        "webRequest",
+        "storage"
+    ],
+    "host_permissions": ["https://*/*", "http://*/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "PotatoTorrent.png",
+        "48": "PotatoTorrent.png",
+        "128": "PotatoTorrent.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "run_at": "document_start",
+            "all_frames": true,
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "M3U8 Sniffer",
+        "default_icon": {
+            "16": "PotatoTorrent.png",
+            "48": "PotatoTorrent.png",
+            "128": "PotatoTorrent.png"
+        }
+    }
+}
